@@ -6,7 +6,7 @@
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:59:35 by ayajirob          #+#    #+#             */
-/*   Updated: 2022/01/29 00:06:10 by ayajirob         ###   ########.fr       */
+/*   Updated: 2022/01/29 01:00:26 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_put_del_str(char *s, t_list *data, int index)
 	
 	i = 0 + index;
 	number_output_characters = ft_strlen(s);
-	while (i <= number_output_characters)
+	while (i < number_output_characters)
 	{
 		write(1, &s[i], 1);
 		i++;
@@ -135,8 +135,8 @@ void	ft_otput_for_s(char *str, t_list *data)
 
 	if (str == NULL)
 	{
-		str = (char *)malloc(7 * sizeof(char *));
-		str = "(null)";
+		//str = (char *)malloc(7 * sizeof(char *));
+		str = "(null)\0";
 	}
 	len = ft_strlen(str);
 	if (data->precision != -1)
@@ -151,4 +151,5 @@ void	ft_otput_for_s(char *str, t_list *data)
 	ft_print_str(str, 0, len, data);
 	if (data->indent_right != 0)
 		ft_print_indent(data->indent_right - len, data, 1);
+	//free(str);
 }

@@ -1,6 +1,6 @@
 NAME = libftprintf.a
 
-SRC = ft_printf.c ft_output_for_csd.c ft_output_for_px.c
+SRC = ft_printf.c ft_output_for_csd.c ft_output_for_px.c ft_lstnew_bonus.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -12,7 +12,6 @@ $(NAME) : $(OBJ)
 
 $(OBJ): $(SRC) ft_printf.h
 	cd libft && $(MAKE)
-	cd libft && make bonus
 	cp libft/libft.a $(NAME)
 	$(GCC) -c $(SRC)
 	ar rc $(NAME) $(OBJ)

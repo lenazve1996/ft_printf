@@ -6,7 +6,7 @@
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 18:10:36 by ayajirob          #+#    #+#             */
-/*   Updated: 2022/01/28 22:45:45 by ayajirob         ###   ########.fr       */
+/*   Updated: 2022/01/29 00:42:49 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,22 @@
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
-# include "libft/libft.h"
+# include "./libft/libft.h"
 # include <stdio.h>
 
+typedef struct s_list
+{
+	int				precision;
+	int				indent;
+	int				indent_right;
+	int				zero_flag;
+	const	char	*form;
+	int				specifier_flag;
+	int				output_chars;
+	struct s_list	*next;
+}					t_list;
+
+t_list	*ft_lstnew(const char *format);
 int		ft_printf(const char *format, ...);
 int		ft_output_for_px(unsigned long long n, char format, t_list *data);
 int		ft_otput_for_x(unsigned int n, char specification);

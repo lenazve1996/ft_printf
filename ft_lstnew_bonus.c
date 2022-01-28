@@ -1,19 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/17 17:30:08 by ayajirob          #+#    #+#             */
-/*   Updated: 2021/12/05 15:39:04 by ayajirob         ###   ########.fr       */
+/*   Created: 2021/11/17 17:33:14 by ayajirob          #+#    #+#             */
+/*   Updated: 2022/01/29 00:44:15 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstnew(const char *format)
 {
-	new->next = *lst;
-	*lst = new;
+	t_list	*new_element;
+
+	new_element = (t_list *)malloc(sizeof(t_list));
+	if (!new_element)
+		return (NULL);
+	new_element->form = format;
+	new_element->precision = -1;
+	new_element->output_chars = 0;
+	new_element->indent = 0;
+	new_element->indent_right = 0;
+	new_element->zero_flag = 0;
+	new_element->next = NULL;
+	return (new_element);
 }

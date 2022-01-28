@@ -6,7 +6,7 @@
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:59:27 by ayajirob          #+#    #+#             */
-/*   Updated: 2022/01/28 23:36:08 by ayajirob         ###   ########.fr       */
+/*   Updated: 2022/01/29 00:59:27 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ char	*ft_itoa_xec(char *s, unsigned long long number, int len, char format)
 		s[--len] = c;
 		number /= 16;
 	}
+	s[++len] = '\0';
 	return (s);
 }
 

@@ -11,9 +11,12 @@ int main()
     int a;
     int b;
 
-    a = 5;
-    printf("%.7i\n", -54);
-    ft_printf("%.7i\n", -54);
+    a = 0;
+    b = 0;
+    a = printf("this %i number\n", -267);
+    b = ft_printf("this %i number\n", -267);
+    printf("%d\n", a);
+    printf("%d\n", b);
     // str = (char *)malloc(5 * sizeof(char));
     // str = "hell";
     // standart = printf(".9s\n", NULL);

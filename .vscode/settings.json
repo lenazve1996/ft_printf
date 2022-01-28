@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "ostream": "c"
+        "ostream": "c",
+        "ft_printf.h": "c"
     }
 }

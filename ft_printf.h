@@ -6,7 +6,7 @@
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 18:10:36 by ayajirob          #+#    #+#             */
-/*   Updated: 2022/01/28 17:02:15 by ayajirob         ###   ########.fr       */
+/*   Updated: 2022/01/28 22:45:45 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "libft/libft.h"
+# include <stdio.h>
 
 int		ft_printf(const char *format, ...);
 int		ft_output_for_px(unsigned long long n, char format, t_list *data);
@@ -28,6 +29,7 @@ void	ft_otput_for_s(char *str, t_list *data);
 void	ft_put_del_str(char *s, t_list *data, int index);
 char	*ft_strnew(size_t size);
 int		ft_count_char_number(unsigned long long n);
-void	ft_print_indent(int n, t_list *data);
+void	ft_print_indent(int n, t_list *data, int flag);
+void	ft_print_str(char *str, int start_index, int numb_to_print, t_list *data);
 
 #endif

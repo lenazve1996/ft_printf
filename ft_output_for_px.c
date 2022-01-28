@@ -6,7 +6,7 @@
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:59:27 by ayajirob          #+#    #+#             */
-/*   Updated: 2022/01/28 17:19:14 by ayajirob         ###   ########.fr       */
+/*   Updated: 2022/01/28 23:36:08 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,16 @@ int	ft_output_for_px(unsigned long long n, char format, t_list *data)
 		str[1] = 'x';
 		str[0] = '0';
 	}
+	len = ft_strlen(str);
 	if (data->indent != 0)
-		ft_print_indent(data->indent - ft_strlen(str), data);
-	ft_put_del_str(str, data, 0);
+	{
+		if (data->precision == 0)
+			len = 0;
+		ft_print_indent(data->indent - len, data, 0);
+	}
+	if (data->precision != 0)
+		ft_put_del_str(str, data, 0);
 	if (data->indent_right != 0)
-		ft_print_indent(data->indent_right, data);
+		ft_print_indent(data->indent_right, data, 1);
 	return (0);
 }

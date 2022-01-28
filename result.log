@@ -1,250 +1,6 @@
-- [OUTPUT] ft_printf("%-5%")
-   expected: "%    "
-   actual:   "%     "
-
-- [OUTPUT] ft_printf("%05%")
-   expected: "0000%"
-   actual:   "%"
-
-- [OUTPUT] ft_printf("%-05%")
-   expected: "%    "
-   actual:   "%     "
-
-- [OUTPUT] ft_printf("%.s", NULL)
-   expected: ""
-   actual:   "(null)"
-
-- [OUTPUT] ft_printf("%-32s", "abc")
-   expected: "abc                             "
-   actual:   "abc                                "
-
-- [OUTPUT] ft_printf("%-16s", "nark nark")
-   expected: "nark nark       "
-   actual:   "nark nark                "
-
-- [OUTPUT] ft_printf("%-5s", "goes over")
-   expected: "goes over"
-   actual:   "goes over     "
-
-- [OUTPUT] ft_printf("%.3s", "hello")
-   expected: "hel"
-   actual:   "hello"
-
-- [OUTPUT] ft_printf("%.s", "hello")
-   expected: ""
-   actual:   "hello"
-
-- [OUTPUT] ft_printf("%.0s", "hello")
-   expected: ""
-   actual:   "hello"
-
-- [OUTPUT] ft_printf("%.3s%.2s", "holla", "bitch")
-   expected: "holbi"
-   actual:   "hollabitch"
-
-- [OUTPUT] ft_printf("%.2s%.7s", "hello", "world")
-   expected: "heworld"
-   actual:   "helloworld"
-
-- [OUTPUT] ft_printf("%.7s%.2s", "hello", "world")
-   expected: "hellowo"
-   actual:   "helloworld"
-
-- [OUTPUT] ft_printf("%7.5s", "bombastic")
-   expected: "  bomba"
-   actual:   "bombastic"
-
-- [OUTPUT] ft_printf("%-7.5s", "yolo")
-   expected: "yolo   "
-   actual:   "yolo       "
-
-- [OUTPUT] ft_printf("%-7.5s", "tubular")
-   expected: "tubul  "
-   actual:   "tubular       "
-
-- [OUTPUT] ft_printf("%7.3s%7.7s", "hello", "world")
-   expected: "    hel  world"
-   actual:   "  hello  world"
-
-- [OUTPUT] ft_printf("%3.3s%7.7s", "hello", "world")
-   expected: "hel  world"
-   actual:   "hello  world"
-
-- [OUTPUT] ft_printf("%7.3s%3.7s", "hello", "world")
-   expected: "    helworld"
-   actual:   "  helloworld"
-
-- [OUTPUT] ft_printf("%3.3s%3.7s", "hello", "world")
-   expected: "helworld"
-   actual:   "helloworld"
-
-- [OUTPUT] ft_printf("%7.7s%7.3s", "hello", "world")
-   expected: "  hello    wor"
-   actual:   "  hello  world"
-
-- [OUTPUT] ft_printf("%3.7s%7.3s", "hello", "world")
-   expected: "hello    wor"
-   actual:   "hello  world"
-
-- [OUTPUT] ft_printf("%7.7s%3.3s", "hello", "world")
-   expected: "  hellowor"
-   actual:   "  helloworld"
-
-- [OUTPUT] ft_printf("%3.7s%3.3s", "hello", "world")
-   expected: "hellowor"
-   actual:   "helloworld"
-
-- [OUTPUT] ft_printf("%7.3s%7.3s", "hello", "world")
-   expected: "    hel    wor"
-   actual:   "  hello  world"
-
-- [OUTPUT] ft_printf("%3.3s%7.3s", "hello", "world")
-   expected: "hel    wor"
-   actual:   "hello  world"
-
-- [OUTPUT] ft_printf("%7.3s%3.3s", "hello", "world")
-   expected: "    helwor"
-   actual:   "  helloworld"
-
-- [OUTPUT] ft_printf("%3.3s%3.3s", "hello", "world")
-   expected: "helwor"
-   actual:   "helloworld"
-
-- [OUTPUT] ft_printf("%-7s%5s", "hello", "world")
-   expected: "hello  world"
-   actual:   "hello       world       "
-
-- [OUTPUT] ft_printf("%7s%-5s", "hello", "world")
-   expected: "  helloworld"
-   actual:   "  hello  world     "
-
-- [OUTPUT] ft_printf("%-32s", NULL)
-   expected: "(null)                          "
-   actual:   "(null)                                "
-
-- [OUTPUT] ft_printf("%-16s", NULL)
-   expected: "(null)          "
-   actual:   "(null)                "
-
-- [OUTPUT] ft_printf("%-3s", NULL)
-   expected: "(null)"
-   actual:   "(null)   "
-
-- [OUTPUT] ft_printf("%.3s", "NULL")
-   expected: "NUL"
-   actual:   "NULL"
-
-- [OUTPUT] ft_printf("%.s", "NULL")
-   expected: ""
-   actual:   "NULL"
-
-- [OUTPUT] ft_printf("%.0s", "NULL")
-   expected: ""
-   actual:   "NULL"
-
-- [OUTPUT] ft_printf("%.s", s_hidden)
-   expected: ""
-   actual:   "hi low"
-
-- [OUTPUT] ft_printf("%.03s", s_hidden)
-   expected: "hi "
-   actual:   "hi low"
-
-- [OUTPUT] ft_printf("%.03s", NULL)
-   expected: "(nu"
-   actual:   "(null)"
-
-- [OUTPUT] ft_printf("%3.s", s_hidden)
-   expected: "   "
-   actual:   "hi low"
-
-- [OUTPUT] ft_printf("%10.s", s_hidden)
-   expected: "          "
-   actual:   "    hi low"
-
-- [OUTPUT] ft_printf("%3.s", NULL)
-   expected: "   "
-   actual:   "(null)"
-
-- [OUTPUT] ft_printf("%10.s", NULL)
-   expected: "          "
-   actual:   "    (null)"
-
-- [OUTPUT] ft_printf("%-3.s", s_hidden)
-   expected: "   "
-   actual:   "hi low   "
-
-- [OUTPUT] ft_printf("%-8.s", s_hidden)
-   expected: "        "
-   actual:   "hi low        "
-
-- [OUTPUT] ft_printf("%-3.s", NULL)
-   expected: "   "
-   actual:   "(null)   "
-
-- [OUTPUT] ft_printf("%-8.s", NULL)
-   expected: "        "
-   actual:   "(null)        "
-
-- [OUTPUT] ft_printf("%3.1s", s_hidden)
-   expected: "  h"
-   actual:   "hi low"
-
-- [OUTPUT] ft_printf("%10.1s", s_hidden)
-   expected: "         h"
-   actual:   "    hi low"
-
-- [OUTPUT] ft_printf("%3.1s", NULL)
-   expected: "  ("
-   actual:   "(null)"
-
-- [OUTPUT] ft_printf("%9.1s", NULL)
-   expected: "        ("
-   actual:   "   (null)"
-
-- [OUTPUT] ft_printf("%-3.1s", s_hidden)
-   expected: "h  "
-   actual:   "hi low   "
-
-- [OUTPUT] ft_printf("%-10.1s", s_hidden)
-   expected: "h         "
-   actual:   "hi low          "
-
-- [OUTPUT] ft_printf("%-3.1s", NULL)
-   expected: "(  "
-   actual:   "(null)   "
-
-- [OUTPUT] ft_printf("%-9.1s", NULL)
-   expected: "(        "
-   actual:   "(null)         "
-
-- [OUTPUT] ft_printf("%-3.6s", s_hidden)
-   expected: "hi low"
-   actual:   "hi low   "
-
-- [OUTPUT] ft_printf("%-20.6s", s_hidden)
-   expected: "hi low              "
-   actual:   "hi low                    "
-
-- [OUTPUT] ft_printf("%-3.8s", s_hidden)
-   expected: "hi low"
-   actual:   "hi low   "
-
-- [OUTPUT] ft_printf("%-10.8s", s_hidden)
-   expected: "hi low    "
-   actual:   "hi low          "
-
-- [OUTPUT] ft_printf("%-3.8s", NULL)
-   expected: "(null)"
-   actual:   "(null)   "
-
-- [OUTPUT] ft_printf("%-10.8s", NULL)
-   expected: "(null)    "
-   actual:   "(null)          "
-
-- [OUTPUT] ft_printf("%-.00s", s_hidden)
-   expected: ""
-   actual:   "hi low"
+- [OUTPUT] ft_printf("%.p", &ncm_p)
+   expected: "0x10d96e0d0"
+   actual:   ""
 
 - [OUTPUT] ft_printf("this %i number", 17)
    expected: "this 17 number"
@@ -282,18 +38,6 @@
    expected: "0  "
    actual:   "0"
 
-- [OUTPUT] ft_printf("%10.5i", -216)
-   expected: "    -00216"
-   actual:   "     -00216"
-
-- [OUTPUT] ft_printf("%8.3i", 8375)
-   expected: "    8375"
-   actual:   "     8375"
-
-- [OUTPUT] ft_printf("%8.3i", -8473)
-   expected: "   -8473"
-   actual:   "     -8473"
-
 - [OUTPUT] ft_printf("%-8.5i", 34)
    expected: "00034   "
    actual:   "00034"
@@ -314,58 +58,6 @@
    expected: "-8473   "
    actual:   "-8473"
 
-- [OUTPUT] ft_printf("%08.5i", 34)
-   expected: "   00034"
-   actual:   "00000000034"
-
-- [OUTPUT] ft_printf("%010.5i", -216)
-   expected: "    -00216"
-   actual:   "-00-000000216"
-
-- [OUTPUT] ft_printf("%08.5i", 0)
-   expected: "   00000"
-   actual:   "000000000000"
-
-- [OUTPUT] ft_printf("%08.3i", 8375)
-   expected: "    8375"
-   actual:   "00008375"
-
-- [OUTPUT] ft_printf("%08.3i", -8473)
-   expected: "   -8473"
-   actual:   "--0008473"
-
-- [OUTPUT] ft_printf("%03.7i", -2375)
-   expected: "-0002375"
-   actual:   "-000-2375"
-
-- [OUTPUT] ft_printf("%03.3i", -8462)
-   expected: "-8462"
-   actual:   "--8462"
-
-- [OUTPUT] ft_printf("%.0i", 0)
-   expected: ""
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%.i", 0)
-   expected: ""
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%5.0i", 0)
-   expected: "     "
-   actual:   "    0"
-
-- [OUTPUT] ft_printf("%5.i", 0)
-   expected: "     "
-   actual:   "    0"
-
-- [OUTPUT] ft_printf("%-5.0i", 0)
-   expected: "     "
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%-5.i", 0)
-   expected: "     "
-   actual:   "0"
-
 - [OUTPUT] ft_printf("%-7d", 33)
    expected: "33     "
    actual:   "33"
@@ -377,18 +69,6 @@
 - [OUTPUT] ft_printf("%-3d", 0)
    expected: "0  "
    actual:   "0"
-
-- [OUTPUT] ft_printf("%10.5d", -216)
-   expected: "    -00216"
-   actual:   "     -00216"
-
-- [OUTPUT] ft_printf("%8.3d", 8375)
-   expected: "    8375"
-   actual:   "     8375"
-
-- [OUTPUT] ft_printf("%8.3d", -8473)
-   expected: "   -8473"
-   actual:   "     -8473"
 
 - [OUTPUT] ft_printf("%-8.5d", 34)
    expected: "00034   "
@@ -410,61 +90,9 @@
    expected: "-8473   "
    actual:   "-8473"
 
-- [OUTPUT] ft_printf("%08.5d", 34)
-   expected: "   00034"
-   actual:   "00000000034"
-
-- [OUTPUT] ft_printf("%010.5d", -216)
-   expected: "    -00216"
-   actual:   "-00-000000216"
-
-- [OUTPUT] ft_printf("%08.5d", 0)
-   expected: "   00000"
-   actual:   "000000000000"
-
-- [OUTPUT] ft_printf("%08.3d", 8375)
-   expected: "    8375"
-   actual:   "00008375"
-
-- [OUTPUT] ft_printf("%08.3d", -8473)
-   expected: "   -8473"
-   actual:   "--0008473"
-
-- [OUTPUT] ft_printf("%03.7d", -2375)
-   expected: "-0002375"
-   actual:   "-000-2375"
-
-- [OUTPUT] ft_printf("%03.3d", -8462)
-   expected: "-8462"
-   actual:   "--8462"
-
 - [OUTPUT] ft_printf("[%d] [%d]", i_pos_1, i_pos_1)
    expected: "[878023] [878023]"
    actual:   "[878023"
-
-- [OUTPUT] ft_printf("%.0d", 0)
-   expected: ""
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%.d", 0)
-   expected: ""
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%5.0d", 0)
-   expected: "     "
-   actual:   "    0"
-
-- [OUTPUT] ft_printf("%5.d", 0)
-   expected: "     "
-   actual:   "    0"
-
-- [OUTPUT] ft_printf("%-5.0d", 0)
-   expected: "     "
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%-5.d", 0)
-   expected: "     "
-   actual:   "0"
 
 - [OUTPUT] ft_printf("this %u number", 17)
    expected: "this 17 number"
@@ -486,10 +114,6 @@
    expected: "0  "
    actual:   "0"
 
-- [OUTPUT] ft_printf("%8.3u", 8375)
-   expected: "    8375"
-   actual:   "     8375"
-
 - [OUTPUT] ft_printf("%-8.5u", 34)
    expected: "00034   "
    actual:   "00034"
@@ -502,42 +126,6 @@
    expected: "8375    "
    actual:   "8375"
 
-- [OUTPUT] ft_printf("%08.5u", 34)
-   expected: "   00034"
-   actual:   "00000000034"
-
-- [OUTPUT] ft_printf("%08.5u", 0)
-   expected: "   00000"
-   actual:   "000000000000"
-
-- [OUTPUT] ft_printf("%08.3u", 8375)
-   expected: "    8375"
-   actual:   "00008375"
-
-- [OUTPUT] ft_printf("%.0u", 0)
-   expected: ""
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%.u", 0)
-   expected: ""
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%5.0u", 0)
-   expected: "     "
-   actual:   "    0"
-
-- [OUTPUT] ft_printf("%5.u", 0)
-   expected: "     "
-   actual:   "    0"
-
-- [OUTPUT] ft_printf("%-5.0u", 0)
-   expected: "     "
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%-5.u", 0)
-   expected: "     "
-   actual:   "0"
-
 - [OUTPUT] ft_printf("this %x number", 17)
    expected: "this 11 number"
    actual:   "this 11"
@@ -618,30 +206,6 @@
    expected: "0000cc3"
    actual:   "cc3"
 
-- [OUTPUT] ft_printf("%.0x", 0)
-   expected: ""
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%.x", 0)
-   expected: ""
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%5.0x", 0)
-   expected: "     "
-   actual:   "    0"
-
-- [OUTPUT] ft_printf("%5.x", 0)
-   expected: "     "
-   actual:   "    0"
-
-- [OUTPUT] ft_printf("%-5.0x", 0)
-   expected: "     "
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%-5.x", 0)
-   expected: "     "
-   actual:   "0"
-
 - [OUTPUT] ft_printf("this %x number", 17)
    expected: "this 11 number"
    actual:   "this 11"
@@ -721,30 +285,6 @@
 - [OUTPUT] ft_printf("%02.7x", 3267)
    expected: "0000cc3"
    actual:   "cc3"
-
-- [OUTPUT] ft_printf("%.0x", 0)
-   expected: ""
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%.x", 0)
-   expected: ""
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%5.0x", 0)
-   expected: "     "
-   actual:   "    0"
-
-- [OUTPUT] ft_printf("%5.x", 0)
-   expected: "     "
-   actual:   "    0"
-
-- [OUTPUT] ft_printf("%-5.0x", 0)
-   expected: "     "
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%-5.x", 0)
-   expected: "     "
-   actual:   "0"
 
 - [OUTPUT] ft_printf("this %X number", 17)
    expected: "this 11 number"
@@ -905,90 +445,50 @@
 - [OUTPUT] ft_printf("%02.7X", 3267)
    expected: "0000CC3"
    actual:   "CC3"
-
-- [OUTPUT] ft_printf("%.0X", 0)
-   expected: ""
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%.X", 0)
-   expected: ""
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%5.0X", 0)
-   expected: "     "
-   actual:   "    0"
-
-- [OUTPUT] ft_printf("%5.X", 0)
-   expected: "     "
-   actual:   "    0"
-
-- [OUTPUT] ft_printf("%-5.0X", 0)
-   expected: "     "
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%-5.X", 0)
-   expected: "     "
-   actual:   "0"
 
 - [OUTPUT] ft_printf("%p%p%p%p%p%p%p%p%p%p%p%p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12)
-   expected: "0x1056b71e80x1056b71e90x1056b71ea0x1056b71ec0x1056b71f00x1056b71f40x1056b71f80x1056b72000x1056b72080x1056b72100x1056b72180x1056b7220"
-   actual:   "0x1056b71e8"
+   expected: "0x10d97e1e80x10d97e1e90x10d97e1ea0x10d97e1ec0x10d97e1f00x10d97e1f40x10d97e1f80x10d97e2000x10d97e2080x10d97e2100x10d97e2180x10d97e220"
+   actual:   "0x10d97e1e8"
 
 - [OUTPUT] ft_printf("%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p%70p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12)
-   expected: "                                                           0x1056b71e8                                                           0x1056b71e9                                                           0x1056b71ea                                                           0x1056b71ec                                                           0x1056b71f0                                                           0x1056b71f4                                                           0x1056b71f8                                                           0x1056b7200                                                           0x1056b7208                                                           0x1056b7210                                                           0x1056b7218                                                           0x1056b7220"
-   actual:   "                                                           0x1056b71e8"
+   expected: "                                                           0x10d97e1e8                                                           0x10d97e1e9                                                           0x10d97e1ea                                                           0x10d97e1ec                                                           0x10d97e1f0                                                           0x10d97e1f4                                                           0x10d97e1f8                                                           0x10d97e200                                                           0x10d97e208                                                           0x10d97e210                                                           0x10d97e218                                                           0x10d97e220"
+   actual:   "                                                           0x10d97e1e8"
 
 - [OUTPUT] ft_printf("%5p%5p%5p%5p%5p%5p%5p%5p%5p%5p%5p%5p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12)
-   expected: "0x1056b71e80x1056b71e90x1056b71ea0x1056b71ec0x1056b71f00x1056b71f40x1056b71f80x1056b72000x1056b72080x1056b72100x1056b72180x1056b7220"
-   actual:   "0x1056b71e8"
+   expected: "0x10d97e1e80x10d97e1e90x10d97e1ea0x10d97e1ec0x10d97e1f00x10d97e1f40x10d97e1f80x10d97e2000x10d97e2080x10d97e2100x10d97e2180x10d97e220"
+   actual:   "0x10d97e1e8"
 
 - [OUTPUT] ft_printf("%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p%16p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12)
-   expected: "     0x1056b71e8     0x1056b71e9     0x1056b71ea     0x1056b71ec     0x1056b71f0     0x1056b71f4     0x1056b71f8     0x1056b7200     0x1056b7208     0x1056b7210     0x1056b7218     0x1056b7220"
-   actual:   "     0x1056b71e8"
+   expected: "     0x10d97e1e8     0x10d97e1e9     0x10d97e1ea     0x10d97e1ec     0x10d97e1f0     0x10d97e1f4     0x10d97e1f8     0x10d97e200     0x10d97e208     0x10d97e210     0x10d97e218     0x10d97e220"
+   actual:   "     0x10d97e1e8"
 
 - [OUTPUT] ft_printf("%8p%8p%8p%8p%8p%8p%8p%8p%8p%8p%8p%8p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12)
-   expected: "0x1056b71e80x1056b71e90x1056b71ea0x1056b71ec0x1056b71f00x1056b71f40x1056b71f80x1056b72000x1056b72080x1056b72100x1056b72180x1056b7220"
-   actual:   "0x1056b71e8"
+   expected: "0x10d97e1e80x10d97e1e90x10d97e1ea0x10d97e1ec0x10d97e1f00x10d97e1f40x10d97e1f80x10d97e2000x10d97e2080x10d97e2100x10d97e2180x10d97e220"
+   actual:   "0x10d97e1e8"
 
 - [OUTPUT] ft_printf("%32p%32p%32p%32p%32p%32p%32p%32p%32p%32p%32p%32p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12)
-   expected: "                     0x1056b71e8                     0x1056b71e9                     0x1056b71ea                     0x1056b71ec                     0x1056b71f0                     0x1056b71f4                     0x1056b71f8                     0x1056b7200                     0x1056b7208                     0x1056b7210                     0x1056b7218                     0x1056b7220"
-   actual:   "                     0x1056b71e8"
+   expected: "                     0x10d97e1e8                     0x10d97e1e9                     0x10d97e1ea                     0x10d97e1ec                     0x10d97e1f0                     0x10d97e1f4                     0x10d97e1f8                     0x10d97e200                     0x10d97e208                     0x10d97e210                     0x10d97e218                     0x10d97e220"
+   actual:   "                     0x10d97e1e8"
 
 - [OUTPUT] ft_printf("%-70p%-70p%-70p%-70p%-70p%-70p%-70p%-70p%-70p%-70p%-70p%-70p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12)
-   expected: "0x1056b71e8                                                           0x1056b71e9                                                           0x1056b71ea                                                           0x1056b71ec                                                           0x1056b71f0                                                           0x1056b71f4                                                           0x1056b71f8                                                           0x1056b7200                                                           0x1056b7208                                                           0x1056b7210                                                           0x1056b7218                                                           0x1056b7220                                                           "
-   actual:   "0x1056b71e8"
+   expected: "0x10d97e1e8                                                           0x10d97e1e9                                                           0x10d97e1ea                                                           0x10d97e1ec                                                           0x10d97e1f0                                                           0x10d97e1f4                                                           0x10d97e1f8                                                           0x10d97e200                                                           0x10d97e208                                                           0x10d97e210                                                           0x10d97e218                                                           0x10d97e220                                                           "
+   actual:   "0x10d97e1e8"
 
 - [OUTPUT] ft_printf("%-5p%-5p%-5p%-5p%-5p%-5p%-5p%-5p%-5p%-5p%-5p%-5p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12)
-   expected: "0x1056b71e80x1056b71e90x1056b71ea0x1056b71ec0x1056b71f00x1056b71f40x1056b71f80x1056b72000x1056b72080x1056b72100x1056b72180x1056b7220"
-   actual:   "0x1056b71e8"
+   expected: "0x10d97e1e80x10d97e1e90x10d97e1ea0x10d97e1ec0x10d97e1f00x10d97e1f40x10d97e1f80x10d97e2000x10d97e2080x10d97e2100x10d97e2180x10d97e220"
+   actual:   "0x10d97e1e8"
 
 - [OUTPUT] ft_printf("%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p%-16p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12)
-   expected: "0x1056b71e8     0x1056b71e9     0x1056b71ea     0x1056b71ec     0x1056b71f0     0x1056b71f4     0x1056b71f8     0x1056b7200     0x1056b7208     0x1056b7210     0x1056b7218     0x1056b7220     "
-   actual:   "0x1056b71e8"
+   expected: "0x10d97e1e8     0x10d97e1e9     0x10d97e1ea     0x10d97e1ec     0x10d97e1f0     0x10d97e1f4     0x10d97e1f8     0x10d97e200     0x10d97e208     0x10d97e210     0x10d97e218     0x10d97e220     "
+   actual:   "0x10d97e1e8"
 
 - [OUTPUT] ft_printf("%-8p%-8p%-8p%-8p%-8p%-8p%-8p%-8p%-8p%-8p%-8p%-8p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12)
-   expected: "0x1056b71e80x1056b71e90x1056b71ea0x1056b71ec0x1056b71f00x1056b71f40x1056b71f80x1056b72000x1056b72080x1056b72100x1056b72180x1056b7220"
-   actual:   "0x1056b71e8"
+   expected: "0x10d97e1e80x10d97e1e90x10d97e1ea0x10d97e1ec0x10d97e1f00x10d97e1f40x10d97e1f80x10d97e2000x10d97e2080x10d97e2100x10d97e2180x10d97e220"
+   actual:   "0x10d97e1e8"
 
 - [OUTPUT] ft_printf("%-32p%-32p%-32p%-32p%-32p%-32p%-32p%-32p%-32p%-32p%-32p%-32p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12)
-   expected: "0x1056b71e8                     0x1056b71e9                     0x1056b71ea                     0x1056b71ec                     0x1056b71f0                     0x1056b71f4                     0x1056b71f8                     0x1056b7200                     0x1056b7208                     0x1056b7210                     0x1056b7218                     0x1056b7220                     "
-   actual:   "0x1056b71e8"
-
-- [OUTPUT] ft_printf("%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c//%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c", ' ','!','"','#','$', '%','&','\'','(',')','*','+',',','-','.','/','0','1','2','3','4','5','6','7','8','9',':', ';','<','=','>','?','@','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q', 'R','S','T','U', 'V','W','X','Y','Z','[','\\',']','^','_','`','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p', 'q','r','s','t','u','v','w','x','y','z','{','|','~')
-   expected: "  !  "   #$ %  &   '( )  *   +, -  .   /0 1  2   34 5  6   78 9  :   ;< =  >   ?@ A  B   CD E  F   GH I  J   KL M  N   OP Q  R   ST U  V   W//X Y  Z   [\ ]  ^   _` a  b   cd e  f   gh i  j   kl m  n   op q  r   st u  v   wx y  z   {| ~"
-   actual:   "  !  "   #$ %  &   '( )  *   +, -  .   /0 1  2   34 5  6   78 9  :   ;< =  >   ?@ A  B   CD E  F   GH I  J   KL M  N   OP Q  R   ST U  V   W   /   /X Y  Z   [\ ]  ^   _` a  b   cd e  f   gh i  j   kl m  n   op q  r   st u  v   wx y  z   {| ~"
-
-- [OUTPUT] ft_printf("%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c//%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c", ' ','!','"','#','$','%','&','\'','(',')','*','+',',','-','.','/','0','1','2','3','4','5','6','7','8','9',':',';','<', '=','>','?','@','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y', 'Z','[','\\',']','^','_','`','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u', 'v','w','x','y','z','{','|','~')
-   expected: "  !  "   #$ %  &   '( )  *   +, -  .   /0 1  2   34 5  6   78 9  :   ;< =  >   ?@ A  B   CD E  F   GH I  J   KL M  N   OP Q  R   ST U  V   WX Y  Z   [\ ]  ^   _` a  b   cd e  f   gh i  j   kl m  n   o//p q  r   st u  v   wx y  z   {| ~  "
-   actual:   "   !   "    # $  %   &    ' (  )   *    + ,  -   .    / 0  1   2    3 4  5   6    7 8  9   :    ; <  =   >    ? @  A   B    C D  E   F    G H  I   J    K L  M   N    O P  Q   R    S T  U   V    W X  Y   Z    [ \  ]   ^    _ `  a   b    c d  e   f    g h  i   j    k l  m   n    o / / p  q   r    s t  u   v    w x  y   z    { |  ~   "
-
-- [OUTPUT] ft_printf("%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c",(char)1,(char)2,(char)3,(char)4,(char)5,(char)6,(char)7,(char)8,(char)9,(char)10,(char)11, (char)12,(char)13,(char)14,(char)15,(char)16,(char)17,(char)18,(char)19,(char)20,(char)21,(char)22,(char)23,(char)24, (char)25,(char)26,(char)27,(char)28,(char)29,(char)30,(char)31)
-   expected: "                                                \01\02\03\04\05\06\07\08\t\n\v\0c\r\0e\0f\10\11\12\13\14\15\16\17\18\19\1a\1b\1c\1d\1e\1f"
-   actual:   "                                                                               \01\02\03\04\05\06\07\08\t\n\v\0c\r\0e\0f\10\11\12\13\14\15\16\17\18\19\1a\1b\1c\1d\1e\1f"
-
-- [OUTPUT] ft_printf("%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c%-1c%-2c%-3c%-4c",(char)128,(char)129,(char)130, (char)131,(char)132,(char)133,(char)134,(char)135,(char)136,(char)137,(char)138,(char)139,(char)140,(char)141, (char)142,(char)143,(char)144,(char)145,(char)146,(char)147,(char)148,(char)149,(char)150,(char)151,(char)152, (char)153,(char)154,(char)155,(char)156,(char)157,(char)158,(char)159,(char)160,(char)161,(char)162,(char)163, (char)164,(char)165,(char)166,(char)167,(char)168,(char)169,(char)170,(char)171,(char)172,(char)173,(char)174, (char)175,(char)176,(char)177,(char)178,(char)179,(char)180,(char)181,(char)182,(char)183,(char)184,(char)185, (char)186,(char)187,(char)188,(char)189,(char)190,(char)191,(char)192,(char)193,(char)194,(char)195,(char)196, (char)197,(char)198,(char)199,(char)200,(char)201,(char)202,(char)203,(char)204,(char)205,(char)206,(char)207, (char)208,(char)209,(char)210,(char)211,(char)212,(char)213,(char)214,(char)215,(char)216,(char)217,(char)218, (char)219,(char)220,(char)221,(char)222,(char)223,(char)224,(char)225,(char)226,(char)227,(char)228,(char)229, (char)230,(char)231,(char)232,(char)233,(char)234,(char)235,(char)236,(char)237,(char)238,(char)239,(char)240, (char)241,(char)242,(char)243,(char)244,(char)245,(char)246,(char)247,(char)248,(char)249,(char)250,(char)251, (char)252,(char)253,(char)254,(char)255)
-   expected: "                                                                                                                                                                                                \80\81\82\83\84\85\86\87\88\89\8a\8b\8c\8d\8e\8f\90\91\92\93\94\95\96\97\98\99\9a\9b\9c\9d\9e\9f\a0\a1\a2\a3\a4\a5\a6\a7\a8\a9\aa\ab\ac\ad\ae\af\b0\b1\b2\b3\b4\b5\b6\b7\b8\b9\ba\bb\bc\bd\be\bf\c0\c1\c2\c3\c4\c5\c6\c7\c8\c9\ca\cb\cc\cd\ce\cf\d0\d1\d2\d3\d4\d5\d6\d7\d8\d9\da\db\dc\dd\de\df\e0\e1\e2\e3\e4\e5\e6\e7\e8\e9\ea\eb\ec\ed\ee\ef\f0\f1\f2\f3\f4\f5\f6\f7\f8\f9\fa\fb\fc\fd\fe\ff"
-   actual:   "                                                                                                                                                                                                                                                                                                                                \80\81\82\83\84\85\86\87\88\89\8a\8b\8c\8d\8e\8f\90\91\92\93\94\95\96\97\98\99\9a\9b\9c\9d\9e\9f\a0\a1\a2\a3\a4\a5\a6\a7\a8\a9\aa\ab\ac\ad\ae\af\b0\b1\b2\b3\b4\b5\b6\b7\b8\b9\ba\bb\bc\bd\be\bf\c0\c1\c2\c3\c4\c5\c6\c7\c8\c9\ca\cb\cc\cd\ce\cf\d0\d1\d2\d3\d4\d5\d6\d7\d8\d9\da\db\dc\dd\de\df\e0\e1\e2\e3\e4\e5\e6\e7\e8\e9\ea\eb\ec\ed\ee\ef\f0\f1\f2\f3\f4\f5\f6\f7\f8\f9\fa\fb\fc\fd\fe\ff"
+   expected: "0x10d97e1e8                     0x10d97e1e9                     0x10d97e1ea                     0x10d97e1ec                     0x10d97e1f0                     0x10d97e1f4                     0x10d97e1f8                     0x10d97e200                     0x10d97e208                     0x10d97e210                     0x10d97e218                     0x10d97e220                     "
+   actual:   "0x10d97e1e8"
 
 - [OUTPUT] ft_printf("before %d after", 42)
    expected: "before 42 after"
@@ -1003,8 +503,8 @@
    actual:   "a1"
 
 - [OUTPUT] ft_printf("s: %s, p: %p, d:%d", "a string", &test_moulitest_06, 42)
-   expected: "s: a string, p: 0x10549a910, d:42"
-   actual:   "s: a string, p: 0x10549a910"
+   expected: "s: a string, p: 0x10d761700, d:42"
+   actual:   "s: a string, p: 0x10d761700"
 
 - [OUTPUT] ft_printf("%s%p%d%d%p%s%p%p%s", "a", &free, 1, 2, &malloc, "b", &free, &malloc, "c")
    expected: "a0x7ff8036890a0120x7ff8036884f0b0x7ff8036890a00x7ff8036884f0c"
@@ -1132,47 +632,7 @@
 
 - [OUTPUT] ft_printf("{%03.2d}", 0)
    expected: "{ 00}"
-   actual:   "{0000"
-
-- [OUTPUT] ft_printf("%15.4d", 424242)
-   expected: "         424242"
-   actual:   "           424242"
-
-- [OUTPUT] ft_printf("%8.4d", 424242424)
-   expected: "424242424"
-   actual:   "    424242424"
-
-- [OUTPUT] ft_printf("%15.4d", -42)
-   expected: "          -0042"
-   actual:   "           -0042"
-
-- [OUTPUT] ft_printf("%15.4d", -424242)
-   expected: "        -424242"
-   actual:   "           -424242"
-
-- [OUTPUT] ft_printf("%8.4d", -424242424)
-   expected: "-424242424"
-   actual:   "    --424242424"
-
-- [OUTPUT] ft_printf("%.d, %.0d", 0, 0)
-   expected: ", "
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%.i, %.0i", 0, 0)
-   expected: ", "
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%15.4u", 424242)
-   expected: "         424242"
-   actual:   "           424242"
-
-- [OUTPUT] ft_printf("%8.4u", 424242424)
-   expected: "424242424"
-   actual:   "    424242424"
-
-- [OUTPUT] ft_printf("%.u, %.0u", 0, 0)
-   expected: ", "
-   actual:   "0"
+   actual:   "{ 00"
 
 - [OUTPUT] ft_printf("%.4x", 42)
    expected: "002a"
@@ -1190,10 +650,6 @@
    expected: "0000000028757b2"
    actual:   "28757b2"
 
-- [OUTPUT] ft_printf("%.x, %.0x", 0, 0)
-   expected: ", "
-   actual:   "0"
-
 - [OUTPUT] ft_printf("%.4X", 42)
    expected: "002A"
    actual:   "2A"
@@ -1209,30 +665,6 @@
 - [OUTPUT] ft_printf("%4.15X", 424242)
    expected: "000000000067932"
    actual:   "67932"
-
-- [OUTPUT] ft_printf("%.X, %.0X", 0, 0)
-   expected: ", "
-   actual:   "0"
-
-- [OUTPUT] ft_printf("%.4s", "42 is the answer")
-   expected: "42 i"
-   actual:   "42 is the answer"
-
-- [OUTPUT] ft_printf("%15.4s", "I am 42")
-   expected: "           I am"
-   actual:   "        I am 42"
-
-- [OUTPUT] ft_printf("%15.4s", "42 is the answer")
-   expected: "           42 i"
-   actual:   "42 is the answer"
-
-- [OUTPUT] ft_printf("%4.15s", "42 is the answer")
-   expected: "42 is the answe"
-   actual:   "42 is the answer"
-
-- [OUTPUT] ft_printf("%4.s", "42")
-   expected: "    "
-   actual:   "  42"
 
 - [OUTPUT] ft_printf("%u", -42)
    expected: "4294967254"
@@ -1288,15 +720,11 @@
 
 - [OUTPUT] ft_printf("{%05.*d}", -15, 42)
    expected: "{00042}"
-   actual:   "{%*d}"
+   actual:   "{0000%*d}"
 
 - [OUTPUT] ft_printf("pp %.50d\n", 10000)
    expected: "pp 00000000000000000000000000000000000000000000010000\n"
    actual:   "pp 00000000000000000000000000000000000000000000010000"
-
-- [OUTPUT] ft_printf("p3 %.4s\n", NULL)
-   expected: "p3 (nul\n"
-   actual:   "p3 (null)\n"
 
 - [OUTPUT] ft_printf("p5 %.3d\n", 100)
    expected: "p5 100\n"
@@ -1304,7 +732,7 @@
 
 - [OUTPUT] ft_printf("p6 %.0d\n", 100)
    expected: "p6 100\n"
-   actual:   "p6 100"
+   actual:   "p6 \n"
 
 - [OUTPUT] ft_printf("p7 %.4d\n", 100)
    expected: "p7 0100\n"
@@ -1326,17 +754,13 @@
    expected: "p11 100\n"
    actual:   "p11 100"
 
-- [OUTPUT] ft_printf("p12 %.0d\n", 0)
-   expected: "p12 \n"
-   actual:   "p12 0"
-
 - [OUTPUT] ft_printf("p13 %.3i\n", 100)
    expected: "p13 100\n"
    actual:   "p13 100"
 
 - [OUTPUT] ft_printf("p14 %.0i\n", 100)
    expected: "p14 100\n"
-   actual:   "p14 100"
+   actual:   "p14 \n"
 
 - [OUTPUT] ft_printf("p15 %.4i\n", 100)
    expected: "p15 0100\n"
@@ -1358,17 +782,13 @@
    expected: "p19 064\n"
    actual:   "p19 64"
 
-- [OUTPUT] ft_printf("p20 %.0x\n", 0)
-   expected: "p20 \n"
-   actual:   "p20 0"
-
 - [OUTPUT] ft_printf("p21 %.3x\n", 100)
    expected: "p21 064\n"
    actual:   "p21 64"
 
 - [OUTPUT] ft_printf("p22 %.0x\n", 100)
    expected: "p22 64\n"
-   actual:   "p22 64"
+   actual:   "p22 \n"
 
 - [OUTPUT] ft_printf("p23 %.4x\n", 100)
    expected: "p23 0064\n"
@@ -1390,17 +810,13 @@
    expected: "p27 064\n"
    actual:   "p27 64"
 
-- [OUTPUT] ft_printf("p28 %.0x\n", 0)
-   expected: "p28 \n"
-   actual:   "p28 0"
-
 - [OUTPUT] ft_printf("p29 %.3u\n", 100)
    expected: "p29 100\n"
    actual:   "p29 100"
 
 - [OUTPUT] ft_printf("p30 %.0u\n", 100)
    expected: "p30 100\n"
-   actual:   "p30 100"
+   actual:   "p30 \n"
 
 - [OUTPUT] ft_printf("p31 %.4u\n", 100)
    expected: "p31 0100\n"
@@ -1421,14 +837,6 @@
 - [OUTPUT] ft_printf("p35 %.3u\n", 100)
    expected: "p35 100\n"
    actual:   "p35 100"
-
-- [OUTPUT] ft_printf("p36 %.0u\n", 0)
-   expected: "p36 \n"
-   actual:   "p36 0"
-
-- [OUTPUT] ft_printf("%010%")
-   expected: "000000000%"
-   actual:   "%"
 
 - [OUTPUT] ft_printf("%d\n", 2147483647)
    expected: "2147483647\n"
@@ -1514,29 +922,13 @@
    expected: "0x0            \n"
    actual:   "0x0"
 
-- [OUTPUT] ft_printf("%50.2s", "Coucou")
-   expected: "                                                Co"
-   actual:   "                                            Coucou"
-
-- [OUTPUT] ft_printf("%50.2s", NULL)
-   expected: "                                                (n"
-   actual:   "                                            (null)"
-
-- [OUTPUT] ft_printf("%5.0s", "Hello")
-   expected: "     "
-   actual:   "Hello"
-
-- [OUTPUT] ft_printf("%.1s", "Test")
-   expected: "T"
-   actual:   "Test"
+- [OUTPUT] ft_printf("%1p\n", &t)
+   expected: "0x7ff7b284b74c\n"
+   actual:   "0x7ff7b284b74c"
 
 - [OUTPUT] ft_printf("%1p\n", &t)
-   expected: "0x7ff7bab1274c\n"
-   actual:   "0x7ff7bab1274c"
-
-- [OUTPUT] ft_printf("%1p\n", &t)
-   expected: "0x7ff7bab1274c\n"
-   actual:   "0x7ff7bab1274c"
+   expected: "0x7ff7b284b74c\n"
+   actual:   "0x7ff7b284b74c"
 
 - [OUTPUT] ft_printf("t1 %050d\n", 10)
    expected: "t1 00000000000000000000000000000000000000000000000010\n"
@@ -1548,7 +940,7 @@
 
 - [OUTPUT] ft_printf("t3 %50.0d\n", 10)
    expected: "t3                                                 10\n"
-   actual:   "t3                                                 10"
+   actual:   "t3                                                   \n"
 
 - [OUTPUT] ft_printf("t4 %50.50d\n", 10)
    expected: "t4 00000000000000000000000000000000000000000000000010\n"
@@ -1578,10 +970,6 @@
    expected: "t10 -10\n"
    actual:   "t10 -10"
 
-- [OUTPUT] ft_printf("t12 %.0d\n", 0)
-   expected: "t12 \n"
-   actual:   "t12 0"
-
 - [OUTPUT] ft_printf("t13 %01d\n", -20)
    expected: "t13 -20\n"
    actual:   "t13 -20"
@@ -1594,21 +982,9 @@
    expected: "04 Test de chiffre sans h : 432767, et -432767\n"
    actual:   "04 Test de chiffre sans h : 432767"
 
-- [OUTPUT] ft_printf("31 This is an int : %.0d\n\n", 0)
-   expected: "31 This is an int : \n\n"
-   actual:   "31 This is an int : 0"
-
 - [OUTPUT] ft_printf("32 This is an int : %0d\n\n", 0)
    expected: "32 This is an int : 0\n\n"
    actual:   "32 This is an int : 0"
-
-- [OUTPUT] ft_printf("percent 1 %012%")
-   expected: "percent 1 00000000000%"
-   actual:   "percent 1 %"
-
-- [OUTPUT] ft_printf("percent 3 %-12%")
-   expected: "percent 3 %           "
-   actual:   "percent 3 %            "
 
 - [OUTPUT] ft_printf("%d\n", t)
    expected: "50\n"
@@ -1854,10 +1230,6 @@
    expected: "***************    coucou        10**************20                                                *************"
    actual:   "***************%*s%*d**************%*u*************"
 
-- [OUTPUT] ft_printf("taaa %100s\n", "hello")
-   expected: "taaa                                                                                                hello\n"
-   actual:   "taaa                                                                                                hello                                                                                                   \n"
-
 - [OUTPUT] ft_printf("%u", -1024u)
    expected: "4294966272"
    actual:   "-1024"
@@ -1909,10 +1281,6 @@
 - [OUTPUT] ft_printf("%-20X", -0x1234abcdu)
    expected: "EDCB5433            "
    actual:   "EDCB5433"
-
-- [OUTPUT] ft_printf("%-20c", 'x')
-   expected: "x                   "
-   actual:   "x                    "
 
 - [OUTPUT] ft_printf("%020u", -1024u)
    expected: "00000000004294966272"
@@ -2002,10 +1370,6 @@
    expected: "000000000000EDCB5433"
    actual:   "EDCB5433"
 
-- [OUTPUT] ft_printf("%20.5s", "Hallo heimur")
-   expected: "               Hallo"
-   actual:   "        Hallo heimur"
-
 - [OUTPUT] ft_printf("%20.5d", -1024)
    expected: "              -01024"
    actual:   "               -01024"
@@ -2026,29 +1390,9 @@
    expected: "          00EDCB5433"
    actual:   "            EDCB5433"
 
-- [OUTPUT] ft_printf("%020.5d", 1024)
-   expected: "               01024"
-   actual:   "000000000000000001024"
-
-- [OUTPUT] ft_printf("%020.5d", -1024)
-   expected: "              -01024"
-   actual:   "-0-0000000000000001024"
-
-- [OUTPUT] ft_printf("%020.5i", 1024)
-   expected: "               01024"
-   actual:   "000000000000000001024"
-
-- [OUTPUT] ft_printf("%020.5i", -1024)
-   expected: "              -01024"
-   actual:   "-0-0000000000000001024"
-
-- [OUTPUT] ft_printf("%020.5u", 1024u)
-   expected: "               01024"
-   actual:   "000000000000000001024"
-
 - [OUTPUT] ft_printf("%020.5u", -1024u)
    expected: "          4294966272"
-   actual:   "-0-0000000000000001024"
+   actual:   "               -01024"
 
 - [OUTPUT] ft_printf("%020.5x", 0x1234abcdu)
    expected: "            1234abcd"
@@ -2066,45 +1410,45 @@
    expected: "          00EDCB5433"
    actual:   "EDCB5433"
 
-- [OUTPUT] ft_printf("%.0s", "Hallo heimur")
-   expected: ""
-   actual:   "Hallo heimur"
+- [OUTPUT] ft_printf("%20.0d", 1024)
+   expected: "                1024"
+   actual:   "                    "
 
-- [OUTPUT] ft_printf("%20.0s", "Hallo heimur")
-   expected: "                    "
-   actual:   "        Hallo heimur"
+- [OUTPUT] ft_printf("%20.d", -1024)
+   expected: "               -1024"
+   actual:   "                   "
 
-- [OUTPUT] ft_printf("%.s", "Hallo heimur")
-   expected: ""
-   actual:   "Hallo heimur"
+- [OUTPUT] ft_printf("%20.0i", 1024)
+   expected: "                1024"
+   actual:   "                    "
 
-- [OUTPUT] ft_printf("%20.s", "Hallo heimur")
-   expected: "                    "
-   actual:   "        Hallo heimur"
+- [OUTPUT] ft_printf("%20.i", -1024)
+   expected: "               -1024"
+   actual:   "                   "
 
-- [OUTPUT] ft_printf("%20.d", 0)
-   expected: "                    "
-   actual:   "                   0"
-
-- [OUTPUT] ft_printf("%20.i", 0)
-   expected: "                    "
-   actual:   "                   0"
+- [OUTPUT] ft_printf("%20.u", 1024u)
+   expected: "                1024"
+   actual:   "                    "
 
 - [OUTPUT] ft_printf("%20.0u", -1024u)
    expected: "          4294966272"
-   actual:   "               -1024"
+   actual:   "                    "
 
-- [OUTPUT] ft_printf("%20.u", 0u)
-   expected: "                    "
-   actual:   "                   0"
+- [OUTPUT] ft_printf("%20.x", 0x1234abcdu)
+   expected: "            1234abcd"
+   actual:   "                    "
 
-- [OUTPUT] ft_printf("%20.x", 0u)
-   expected: "                    "
-   actual:   "                   0"
+- [OUTPUT] ft_printf("%20.0x", -0x1234abcdu)
+   expected: "            edcb5433"
+   actual:   "                    "
 
-- [OUTPUT] ft_printf("%20.X", 0u)
-   expected: "                    "
-   actual:   "                   0"
+- [OUTPUT] ft_printf("%20.X", 0x1234abcdu)
+   expected: "            1234ABCD"
+   actual:   "                    "
+
+- [OUTPUT] ft_printf("%20.0X", -0x1234abcdu)
+   expected: "            EDCB5433"
+   actual:   "                    "
 
 - [OUTPUT] ft_printf("%--194.54X" ,3852169892u)
    expected: "0000000000000000000000000000000000000000000000E59B72A4                                                                                                                                            "
@@ -2118,37 +1462,29 @@
    expected: "0x24dd0134010e027                                                                                                                      "
    actual:   "0x24dd0134010e027"
 
-- [OUTPUT] ft_printf("%-192.131%")
-   expected: "%                                                                                                                                                                                               "
-   actual:   "%                                                                                                                                                                                                "
-
 - [OUTPUT] ft_printf("%*p%-135.109d" ,-15,(void*)15603137398285451084lu,1482420587)
    expected: "0xd8897acb766abf4c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001482420587                          "
    actual:   "%*p-0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000015"
 
 - [OUTPUT] ft_printf("%49.*s%40.4s" ,1,"uJ%7B","lO;A3OXi'N*?T")
    expected: "                                                u                                    lO;A"
-   actual:   "                                                %                                                *                                                s"
+   actual:   "                                                %*s"
 
 - [OUTPUT] ft_printf("%-78.100u%0091.158x" ,2490445787u,628341766u)
    expected: "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000024904457870000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002573bc06"
-   actual:   "-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-1804521509"
-
-- [OUTPUT] ft_printf("%--198c" ,35)
-   expected: "#                                                                                                                                                                                                     "
-   actual:   "#                                                                                                                                                                                                      "
+   actual:   "-0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001804521509"
 
 - [OUTPUT] ft_printf("%012.84u" ,2880913598u)
    expected: "000000000000000000000000000000000000000000000000000000000000000000000000002880913598"
-   actual:   "-00000000000000000000000000000000000000000000000000000000000000000000000000-01414053698"
+   actual:   "-000000000000000000000000000000000000000000000000000000000000000000000000001414053698"
 
 - [OUTPUT] ft_printf("%-171.108s%0022.*u%-93.114u%*c" ,"r>KM,cWZ,k7U",-75,1057557429u,580880397u,-25,-80)
    expected: "r>KM,cWZ,k7U                                                                                                                                                               0000000000001057557429000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000580880397                        \b0"
-   actual:   "r>KM,cWZ,k7U                                                                                                                                                                           %                                                                                                                                                                           *                                                                                                                                                                           u                                                                                                                                                                           -0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-000000000000000000075"
+   actual:   "r>KM,cWZ,k7U                                                                                                                                                               000000000000000000000%*u-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000075"
 
 - [OUTPUT] ft_printf("%0176.18i%0131.59i%-86X%---45.36X" ,-1748967713,-1568187420,124888334u,2293430389u)
    expected: "                                                                                                                                                             -000000001748967713                                                                       -00000000000000000000000000000000000000000000000001568187420771A50E                                                                               000000000000000000000000000088B2F875         "
-   actual:   "-00000000-0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001748967713"
+   actual:   "                                                                                                                                                             -000000001748967713"
 
 - [OUTPUT] ft_printf("%--40.183X%-178.81X%036.192u%-119.27s" ,2684215029u,410939004u,2169426684u,"!ufvJeVr`+BF#EV")
    expected: "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009FFDDEF50000000000000000000000000000000000000000000000000000000000000000000000000187E6E7C                                                                                                 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002169426684!ufvJeVr`+BF#EV                                                                                                        "
@@ -2156,7 +1492,7 @@
 
 - [OUTPUT] ft_printf("%098.58d%--7.168d" ,549613177,850697743)
    expected: "                                        0000000000000000000000000000000000000000000000000549613177000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000850697743"
-   actual:   "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000549613177"
+   actual:   "                                        0000000000000000000000000000000000000000000000000549613177"
 
 - [OUTPUT] ft_printf("%-48p%-164c" ,(void*)9888845855039847185lu,114)
    expected: "0x893c3ce96c3e7b11                              r                                                                                                                                                                   "
@@ -2165,10 +1501,6 @@
 - [OUTPUT] ft_printf("%-70.193x%-140c%168c%026.51%%0125.119X" ,1102840003u,-50,-17,3721437512u)
    expected: "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000041bc00c3                                                                                                                                                                                                                                                                                                                  0000000000000000000000000%      000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000DDD0A148\ce\ef"
    actual:   "41bc00c3"
-
-- [OUTPUT] ft_printf("%104.60s%109c%-9p" ,"}&@/h\n\f<C",36,(void*)14251011342640672780lu)
-   expected: "                                                                                               }&@/h<C                                                                                                            $0xc5c5c34fa028f00c\n\0c"
-   actual:   "                                                                                               }&@/h<C                                                                                                            $                                                                                           0xc5c5c34fa028f00c\n\0c"
 
 - [OUTPUT] ft_printf("%-*.98u%-124i%-192.2d" ,117,4198534266u,1421101220,-12188465)
    expected: "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000004198534266                   1421101220                                                                                                                  -12188465                                                                                                                                                                                       "
@@ -2180,15 +1512,11 @@
 
 - [OUTPUT] ft_printf("%---137.49s%-127.121X" ,"!^3W]E;3T;FBR(KBN|03|!us3&sT[",2181790462u)
    expected: "!^3W]E;3T;FBR(KBN|03|!us3&sT[                                                                                                            00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000820B7AFE      "
-   actual:   "!^3W]E;3T;FBR(KBN|03|!us3&sT[                                                                                                                                         820B7AFE"
+   actual:   "!^3W]E;3T;FBR(KBN|03|!us3&sT[                                                                                                            820B7AFE"
 
 - [OUTPUT] ft_printf("%--122.24X" ,3986554129u)
    expected: "0000000000000000ED9DFD11                                                                                                  "
    actual:   "ED9DFD11"
-
-- [OUTPUT] ft_printf("%10c%0036.99%" ,9)
-   expected: "         00000000000000000000000000000000000%\t"
-   actual:   "                  %\t"
 
 - [OUTPUT] ft_printf("%--189p" ,(void*)8440737604753056005lu)
    expected: "0x752386216d966105                                                                                                                                                                           "
@@ -2196,15 +1524,15 @@
 
 - [OUTPUT] ft_printf("%-89c%20p%-33.16X%--11.*s%--25.85u" ,10,(void*)1144206967121894099lu,1538791465u,84,"L;x)-34d4BU9<aJE-\n\r4:[)kMj}Y4",543381790u)
    expected: "                                                                                           0xfe10a2ca0d3dad3000000005BB81829                 L;x)-34d4BU9<aJE-4:[)kMj}Y40000000000000000000000000000000000000000000000000000000000000000000000000000543381790\n\n\r"
-   actual:   "                                                                                            0xfe10a2ca0d3dad3\n"
+   actual:   "                                                                                           0xfe10a2ca0d3dad3\n"
 
 - [OUTPUT] ft_printf("%-*.*i%-19.119%" ,158,176,-448314345)
    expected: "-00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000448314345%                  "
-   actual:   "%*.*i%                   "
+   actual:   "%*.*i%                  "
 
 - [OUTPUT] ft_printf("%-12.*s%98.128s%--8p%095.*i%00182.193x" ,139,"o=Z*[","9S14l$RgnTv`-Wm",(void*)3870843096944218592lu,-156,201214506,1134523837u)
    expected: "o=Z*[                                                                                          9S14l$RgnTv`-Wm0x35b7ff49bea211e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000020121450600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000439f75bd"
-   actual:   "%            *            s            "
+   actual:   "%           *s"
 
 - [OUTPUT] ft_printf("%-38.146x" ,2598409833u)
    expected: "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009ae09669"
@@ -2212,7 +1540,7 @@
 
 - [OUTPUT] ft_printf("%-75.38s%-148.135s%00156.106i%-*.105%" ,"q;&kDMa}NfJoOp\\luHJ",NULL,1930062644,105)
    expected: "q;&kDMa}NfJoOp\luHJ                                                        (null)                                                                                                                                                                                                0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001930062644%                                                                                                        "
-   actual:   "q;&kDMa}NfJoOp\luHJ                                                                           (null)                                                                                                                                                    000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001930062644"
+   actual:   "q;&kDMa}NfJoOp\luHJ                                                        (null)                                                                                                                                                                                                0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001930062644"
 
 - [OUTPUT] ft_printf("%--143.5d%-*.127x%--120.89X%-*.193X" ,1846472017,-7,2195740708u,1658686933u,-58,3646533575u)
    expected: "1846472017                                                                                                                                     0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000082e0582400000000000000000000000000000000000000000000000000000000000000000000000000000000062DD8DD5                               00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000D959AFC7"
@@ -2232,7 +1560,7 @@
 
 - [OUTPUT] ft_printf("%-50c%-85.157%%--58.188X" ,9,274691972u)
    expected: "                                                 %                                                                                    000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000105F7784\t"
-   actual:   "                                                  %                                                                                     105F7784\t"
+   actual:   "                                                 %                                                                                    105F7784\t"
 
 - [OUTPUT] ft_printf("%64p%038.87d%23c%--182.49i%--76.110%" ,(void*)10278319775164267212lu,-1550079501,30,-862355787)
    expected: "                                              0x8ea3ed60ee89facc-000000000000000000000000000000000000000000000000000000000000000000000000000001550079501                      -0000000000000000000000000000000000000000862355787                                                                                                                                    %                                                                           \1e"
@@ -2240,11 +1568,11 @@
 
 - [OUTPUT] ft_printf("%-149.*%%-114.120i%0*.24%%--*.28d" ,-63,1318471055,-125,-68,-1205906582)
    expected: "%                                                                                                                                                    000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001318471055%                                                                                                                            -0000000000000000001205906582                                       "
-   actual:   "%                                                                                                                                                     *                                                                                                                                                     %                                                                                                                                                     -                                                                                                                                                     1                                                                                                                                                     1                                                                                                                                                     4                                                                                                                                                     .                                                                                                                                                     1                                                                                                                                                     2                                                                                                                                                     0                                                                                                                                                     i                                                                                                                                                     %                                                                                                                                                     *                                                                                                                                                     .                                                                                                                                                     2                                                                                                                                                     4                                                                                                                                                     %                                                                                                                                                     -                                                                                                                                                     -                                                                                                                                                     *                                                                                                                                                     .                                                                                                                                                     2                                                                                                                                                     8                                                                                                                                                     d                                                                                                                                                     "
+   actual:   "%                                                                                                                                                    *%-114.120i%*.24%--*.28d"
 
 - [OUTPUT] ft_printf("%---34c%-107.*u" ,7,-168,2003619509u)
    expected: "                                 2003619509                                                                                                 \07"
-   actual:   "                                  %                                                                                                           *                                                                                                           u                                                                                                           \07"
+   actual:   "                                 %                                                                                                          *u\07"
 
 - [OUTPUT] ft_printf("%-102p%-91p%00*.32%" ,(void*)17383623580121946936lu,(void*)6825043625903153404lu,-125)
    expected: "0xf13f098b3245db38                                                                                    0x5eb76d04628060fc                                                                         %                                                                                                                            "
@@ -2256,7 +1584,7 @@
 
 - [OUTPUT] ft_printf("%71c%-*.164u%-120.105u" ,58,106,3206019297u,1452705981u)
    expected: "                                                                      :00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003206019297000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001452705981               "
-   actual:   "                                                                      :                                                                      %                                                                      *                                                                      .                                                                      1                                                                      6                                                                      4                                                                      u000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000106"
+   actual:   "                                                                      :%*.164u000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000106"
 
 - [OUTPUT] ft_printf("%-132.186x%00129.46%%-191.181X%-75.123d%0033.123u" ,2222238685u,3146675666u,251185067,3453417465u)
    expected: "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000008474abdd00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000%00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000BB8E75D2          000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000251185067000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003453417465"
@@ -2269,10 +1597,6 @@
 - [OUTPUT] ft_printf("%045.81X" ,1608282792u)
    expected: "00000000000000000000000000000000000000000000000000000000000000000000000005FDC72A8"
    actual:   "5FDC72A8"
-
-- [OUTPUT] ft_printf("%-139.154s" ,"~\\xUX")
-   expected: "~\xUX                                                                                                                                      "
-   actual:   "~\xUX                                                                                                                                           "
 
 - [OUTPUT] ft_printf("%-*c" ,-80,123)
    expected: "{                                                                               "
@@ -2288,11 +1612,11 @@
 
 - [OUTPUT] ft_printf("%--60.36s%-86.108s%0091.147X" ,"ou=eS","Mq9\r",389939786u)
    expected: "ou=eS                                                       Mq9                                                                                  0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000173E024A\r"
-   actual:   "ou=eS                                                            Mq9                                                                                      173E024A\r"
+   actual:   "ou=eS                                                       Mq9                                                                                  173E024A\r"
 
 - [OUTPUT] ft_printf("%0020.149u%-99.97i" ,2945319386u,-1913054753)
    expected: "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002945319386-0000000000000000000000000000000000000000000000000000000000000000000000000000000000000001913054753 "
-   actual:   "-0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-0000000001349647910"
+   actual:   "-00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001349647910"
 
 - [OUTPUT] ft_printf("%--3.115X%-*.*%%58c%-117.63u%---78p" ,3653275853u,81,-117,10,958058058u,(void*)8835148381236382049lu)
    expected: "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000D9C090CD%                                                                                                                                         000000000000000000000000000000000000000000000000000000958058058                                                      0x7a9cc0a461764961                                                            \n"
@@ -2300,7 +1624,7 @@
 
 - [OUTPUT] ft_printf("%-69.27%%--*p" ,-94,(void*)7045295314441527752lu)
    expected: "%                                                                    0x61c5eac2cb02e1c8                                                                            "
-   actual:   "%                                                                     %*p"
+   actual:   "%                                                                    %*p"
 
 - [OUTPUT] ft_printf("%--110.93x%--78.123s%--30.92X%-45.57%%-*.68s" ,218095759u,"lCyN\r",1729010453u,134,"OxhROR`$;.U*;0zEm>e\r")
    expected: "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000cffe08f                 lCyN                                                                         000000000000000000000000000000000000000000000000000000000000000000000000000000000000670E9B15%                                            OxhROR`$;.U*;0zEm>e                                                                                                                  \r\r"
@@ -2308,7 +1632,7 @@
 
 - [OUTPUT] ft_printf("%000169.50u%-127.85%%--195p%-51.49s%-160p" ,2209242471u,(void*)8769599610347160825lu,"1+6UGQiBr8wAmIE*{,xBrju#}s=X",(void*)15118044339110535138lu)
    expected: "                                                                                                                       00000000000000000000000000000000000000002209242471%                                                                                                                              0x79b3e061dd2584f9                                                                                                                                                                                 1+6UGQiBr8wAmIE*{,xBrju#}s=X                       0xd1ce153a4349dfe2                                                                                                                                              "
-   actual:   "-0000000000000000000000000000000000000000-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002085724825"
+   actual:   "                                                                                                                       -00000000000000000000000000000000000000002085724825"
 
 - [OUTPUT] ft_printf("%-82.43i%-*.82%%-*.20X" ,-1945174241,-26,94,1446072230u)
    expected: "-0000000000000000000000000000000001945174241                                      %                         00000000000056314FA6                                                                          "
@@ -2320,15 +1644,11 @@
 
 - [OUTPUT] ft_printf("%--81.*%%019.14%%---27c%-75.150d%00136.74x" ,70,-15,-128722927,4090510000u)
    expected: "%                                                                                000000000000000000%                          -000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000128722927                                                              000000000000000000000000000000000000000000000000000000000000000000f3d03ab0\f1"
-   actual:   "%                                                                                 *                                                                                 %                                                                                 0                                                                                 1                                                                                 9                                                                                 .                                                                                 1                                                                                 4                                                                                 %                                                                                 -                                                                                 -                                                                                 -                                                                                 2                                                                                 7                                                                                 c                                                                                 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000070"
+   actual:   "%                                                                                *%019.14%---27c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000070"
 
 - [OUTPUT] ft_printf("%--11.12d%0107.151x%-*.98i" ,1895257560,1269322791u,120,370452255)
    expected: "001895257560000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004ba8542700000000000000000000000000000000000000000000000000000000000000000000000000000000000000000370452255                      "
    actual:   "001895257560"
-
-- [OUTPUT] ft_printf("%52c%00040.166%%-131c%-12.99s" ,-57,123,"k\r/ULCoKi0")
-   expected: "                                                   000000000000000000000000000000000000000%{                                                                                                                                  k/ULCoKi0  \c7\r"
-   actual:   "                                                                                                      %                                                   {                                                                                                                                                                             k/ULCoKi0            \c7\r"
 
 - [OUTPUT] ft_printf("%--140.183u%-*.35u" ,3194611513u,-160,4264407200u)
    expected: "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000319461151300000000000000000000000004264407200                                                                                                                             "
@@ -2336,11 +1656,11 @@
 
 - [OUTPUT] ft_printf("%-55.40s%--144c%-*.137i%093.12u" ,"M7>#/:*2BGG>zjU2zP'l$H(A4rY",38,53,65160444,3566926644u)
    expected: "M7>#/:*2BGG>zjU2zP'l$H(A4rY                            &                                                                                                                                               00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000065160444                                                                                 003566926644"
-   actual:   "M7>#/:*2BGG>zjU2zP'l$H(A4rY                                                       &                                                                                                                                                %*.137i0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000053"
+   actual:   "M7>#/:*2BGG>zjU2zP'l$H(A4rY                            &                                                                                                                                               %*.137i                                                                                 000000000053"
 
 - [OUTPUT] ft_printf("%-190.*u%--6.26X%156.96s" ,-109,3830289361u,1359348041u,"p@.CbB<\\?d")
    expected: "3830289361                                                                                                                                                                                    00000000000000000051060149                                                                                                                                                  p@.CbB<\?d"
-   actual:   "%                                                                                                                                                                                              *                                                                                                                                                                                              u                                                                                                                                                                                              FFFFFF93"
+   actual:   "%                                                                                                                                                                                             *uFFFFFF93"
 
 - [OUTPUT] ft_printf("%-*c" ,162,89)
    expected: "Y                                                                                                                                                                 "
@@ -2348,15 +1668,15 @@
 
 - [OUTPUT] ft_printf("%-101.121s%--91.*x" ,"5AhgU}%=/*<1+!E8A(S",-192,3542796524u)
    expected: "5AhgU}%=/*<1+!E8A(S                                                                                  d32ac8ec                                                                                   "
-   actual:   "5AhgU}%=/*<1+!E8A(S                                                                                                     %                                                                                           *                                                                                           x                                                                                           "
+   actual:   "5AhgU}%=/*<1+!E8A(S                                                                                  %                                                                                          *x"
 
 - [OUTPUT] ft_printf("%57c%-76.*s%--38p%-*.159X%000193.93X" ,55,-20,"@(ECnQ^2yp,6x4F\fwA*iLS\fgt,De",(void*)15808961691193129302lu,168,1914174653u,2368364743u)
    expected: "                                                        7@(ECnQ^2yp,6x4FwA*iLSgt,De                                                0xdb64b6e60f533956                    00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000007217FCBD                                                                                                             00000000000000000000000000000000000000000000000000000000000000000000000000000000000008D2A60C7\0c\0c"
-   actual:   "                                                        7                                                        %                                                                                                                                    *                                                                                                                                    s                                                                                                                           0xffffffec"
+   actual:   "                                                        7%                                                                           *s                                      %*.159XD969105"
 
 - [OUTPUT] ft_printf("%--140.*d%-169.198X%-*.93%" ,-176,2043379162,1756246551u,32)
    expected: "2043379162                                                                                                                                  000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000068AE3217%                               "
-   actual:   "%                                                                                                                                            *                                                                                                                                            d                                                                                                                                            FFFFFF50"
+   actual:   "%                                                                                                                                           *dFFFFFF50"
 
 - [OUTPUT] ft_printf("%*p%-127.193x%0120.150d" ,-64,(void*)1126585860702498506lu,4001913452u,444237491)
    expected: "0xfa26fdf14266eca                                               00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ee885a6c000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000444237491"
@@ -2364,7 +1684,7 @@
 
 - [OUTPUT] ft_printf("%--81.144s%-*c%--138X" ,"nr:W1kw_#&(;C9k",195,57,2353642673u)
    expected: "nr:W1kw_#&(;C9k                                                                  9                                                                                                                                                                                                  8C49BCB1                                                                                                                                  "
-   actual:   "nr:W1kw_#&(;C9k                                                                                 %*cC3"
+   actual:   "nr:W1kw_#&(;C9k                                                                  %*cC3"
 
 - [OUTPUT] ft_printf("%-139.77X%-82.101x" ,4273984084u,639114854u)
    expected: "000000000000000000000000000000000000000000000000000000000000000000000FEBFD254                                                              00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000026181e66"
@@ -2396,15 +1716,15 @@
 
 - [OUTPUT] ft_printf("%50.10s%-44.68x%--78.43s" ,"Fj&Xd",665370725u,"/p@_T=e=^Cf7!g>fDE")
    expected: "                                             Fj&Xd00000000000000000000000000000000000000000000000000000000000027a8c065/p@_T=e=^Cf7!g>fDE                                                            "
-   actual:   "                                             Fj&Xd                                          27a8c065"
+   actual:   "                                             Fj&Xd27a8c065"
 
 - [OUTPUT] ft_printf("%-175.96%%-153.x" ,822360617u)
    expected: "%                                                                                                                                                                              31043a29                                                                                                                                                 "
-   actual:   "%                                                                                                                                                                               31043a29"
+   actual:   "%                                                                                                                                                                                                                                                                                                                                       "
 
 - [OUTPUT] ft_printf("%043.165%%--35.34s%--4.*d%-189.*i" ,"TSvqw0m:$c!hhK(,R*",-100,967600936,45,1272776825)
    expected: "000000000000000000000000000000000000000000%TSvqw0m:$c!hhK(,R*                 967600936000000000000000000000000000000000001272776825                                                                                                                                                "
-   actual:   "%TSvqw0m:$c!hhK(,R*                                   %    *    d    %                                                                                                                                                                                             *                                                                                                                                                                                             i                                                                                                                                                                                             "
+   actual:   "000000000000000000000000000000000000000000%TSvqw0m:$c!hhK(,R*                 %   *d%                                                                                                                                                                                            *i"
 
 - [OUTPUT] ft_printf("%-166.180X%--18.47d%---111.87%%8p%0114.24X" ,1637127682u,-1931431309,(void*)3522468094256045905lu,4291674618u)
    expected: "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000061949602-00000000000000000000000000000000000001931431309%                                                                                                              0x30e25211a2c75f51                                                                                          0000000000000000FFCDC1FA"
@@ -2412,15 +1732,11 @@
 
 - [OUTPUT] ft_printf("%-55.46%%--171.99s%--56.41X%-173X" ,"7",3917830995u,3557113666u)
    expected: "%                                                      7                                                                                                                                                                          000000000000000000000000000000000E9855B53               D4053F42                                                                                                                                                                     "
-   actual:   "%                                                       7                                                                                                                                                                           E9855B53"
+   actual:   "%                                                      7                                                                                                                                                                          E9855B53"
 
 - [OUTPUT] ft_printf("%00129.196u%-186.*d%--120.109d%-*.90s" ,3849192113u,-29,-424660320,-653417313,71,"O#SeWbH`V")
    expected: "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003849192113-424660320                                                                                                                                                                                -0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000653417313          O#SeWbH`V                                                              "
-   actual:   "-0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000-00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000445775183"
-
-- [OUTPUT] ft_printf("%--85.97%%---129c" ,33)
-   expected: "%                                                                                    !                                                                                                                                "
-   actual:   "%                                                                                     !                                                                                                                                 "
+   actual:   "-0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000445775183"
 
 - [OUTPUT] ft_printf("%29p%0151.162x%---53.46u%-139.26X" ,(void*)17894711340605174765lu,1565093748u,662758369u,3536629372u)
    expected: "           0xf856c9276eecf3ed00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000005d496f740000000000000000000000000000000000000662758369       000000000000000000D2CCAE7C                                                                                                                 "
@@ -2428,7 +1744,7 @@
 
 - [OUTPUT] ft_printf("%-*.144d%-36c%-96c%-c" ,196,-910445343,-65,124,87)
    expected: "-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000910445343                                                                                      |                                                                                               W\bf"
-   actual:   "%*.144d                                                                                                                                    \c4\e1\bf"
+   actual:   "%*.144d                                                                                                                                  \c4\e1\bf"
 
 - [OUTPUT] ft_printf("%--74.144x%-166p%--78.55s%-195.140x" ,625771587u,(void*)14083163232330204447lu,"P(LiM1QG='.bUp\r",314220770u)
    expected: "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000254c84430xc371725810e2451f                                                                                                                                                    P(LiM1QG='.bUp                                                               00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012baa0e2                                                       \r"
@@ -2444,11 +1760,11 @@
 
 - [OUTPUT] ft_printf("%-188c%-84.159x%-.82i%-192.158i" ,45,2099602418u,-590423754,1933619156)
    expected: "-                                                                                                                                                                                           00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000007d2563f2-000000000000000000000000000000000000000000000000000000000000000000000000059042375400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001933619156                                  "
-   actual:   "-                                                                                                                                                                                            7d2563f2"
+   actual:   "-                                                                                                                                                                                           7d2563f2"
 
 - [OUTPUT] ft_printf("%-*.156x%0033.100u%0.104i%-4.150x%-90.%" ,28,4190048377u,3783020883u,-1750158056,3765069756u)
    expected: "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f9bf10790000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003783020883-000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000017501580560000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e06a67bc%                                                                                         "
-   actual:   "%*.156x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000028"
+   actual:   "%*.156x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000028"
 
 - [OUTPUT] ft_printf("%-p%-35p%00042.14i%p" ,(void*)1508633298498623712lu,(void*)4610270612598633961lu,-1053760970,(void*)4955973954213917723lu)
    expected: "0x14efbdfded5618e00x3ffaf8b2265d35e9                                            -000010537609700x44c7280db102341b"
@@ -2456,11 +1772,11 @@
 
 - [OUTPUT] ft_printf("%--71c%074.49X%-50.195x%-106.79i" ,-112,1537135483u,4281417478u,1103336433)
    expected: "                                                                                               000000000000000000000000000000000000000005B9ED37B0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ff313f060000000000000000000000000000000000000000000000000000000000000000000001103336433                           \90"
-   actual:   "                                                                       5B9ED37B\90"
+   actual:   "                                                                      5B9ED37B\90"
 
 - [OUTPUT] ft_printf("%--150.*d%01.172i%--151.122d%--*.110x%--23.182%" ,193,-1523409169,453642614,881460015,68,2920216226u)
    expected: "-0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001523409169000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000045364261400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000881460015                             000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ae0ef6a2%                      "
-   actual:   "%                                                                                                                                                      *                                                                                                                                                      d                                                                                                                                                      0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000193"
+   actual:   "%                                                                                                                                                     *d0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000193"
 
 - [OUTPUT] ft_printf("%00182.146X%16.*s" ,2246537107u,-64,",8\n/Jkn.tDZcE")
    expected: "                                    00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000085E76F93   ,8/Jkn.tDZcE\n"
@@ -2480,7 +1796,7 @@
 
 - [OUTPUT] ft_printf("%0110.7u%-85.40X%---182.30s" ,1517824905u,3044934856u,".iM8/ct)(S")
    expected: "                                                                                                    151782490500000000000000000000000000000000B57E04C8                                             .iM8/ct)(S                                                                                                                                                                            "
-   actual:   "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001517824905"
+   actual:   "                                                                                                    1517824905"
 
 - [OUTPUT] ft_printf("%108p%-175.188i" ,(void*)11721873312409420167lu,-653373315)
    expected: "                                                                                          0xa2ac75ac284b8187-00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000653373315"
@@ -2488,59 +1804,87 @@
 
 - [OUTPUT] ft_printf("%0134.185i%061.174d" ,1465312329,1402026716)
    expected: "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001465312329000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001402026716"
-   actual:   "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001465312329"
+   actual:   "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001465312329"
 
 - [OUTPUT] ft_printf("%00142.67d%-87.120s%-21.160%%-*.98d%-105.71d" ,1277409698,"/]>n?I^K$-",-187,-569482950,1801496736)
    expected: "                                                                           0000000000000000000000000000000000000000000000000000000001277409698/]>n?I^K$-                                                                             %                    -00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000569482950                                                                                        00000000000000000000000000000000000000000000000000000000000001801496736                                  "
-   actual:   "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001277409698"
-
-- [OUTPUT] ft_printf("%-58.131%")
-   expected: "%                                                         "
-   actual:   "%                                                          "
+   actual:   "                                                                           0000000000000000000000000000000000000000000000000000000001277409698"
 
 - [OUTPUT] ft_printf("%.p", NULL)
    expected: "0x"
-   actual:   "0x0"
+   actual:   ""
 
-- [OUTPUT] ft_printf("%.d", 0)
-   expected: ""
-   actual:   "0"
+- [OUTPUT] ft_printf("%.d", 1)
+   expected: "1"
+   actual:   ""
 
-- [OUTPUT] ft_printf("%.s", "aasf")
-   expected: ""
-   actual:   "aasf"
+- [OUTPUT] ft_printf("%.u", 1)
+   expected: "1"
+   actual:   ""
 
 - [OUTPUT] ft_printf("%.p", NULL)
    expected: "0x"
-   actual:   "0x0"
+   actual:   ""
+
+- [OUTPUT] ft_printf("%.x", 0xee)
+   expected: "ee"
+   actual:   ""
+
+- [OUTPUT] ft_printf("%.X", 0xee)
+   expected: "EE"
+   actual:   ""
 
 - [OUTPUT] ft_printf("%1.p", NULL)
    expected: "0x"
-   actual:   "0x0"
+   actual:   " "
 
-- [OUTPUT] ft_printf("%1.s", "aasf")
-   expected: " "
-   actual:   "aasf"
+- [OUTPUT] ft_printf("%1.d", 1)
+   expected: "1"
+   actual:   " "
+
+- [OUTPUT] ft_printf("%1.u", 1)
+   expected: "1"
+   actual:   " "
 
 - [OUTPUT] ft_printf("%1.p", NULL)
    expected: "0x"
-   actual:   "0x0"
+   actual:   " "
+
+- [OUTPUT] ft_printf("%1.x", 0xee)
+   expected: "ee"
+   actual:   " "
+
+- [OUTPUT] ft_printf("%1.X", 0xee)
+   expected: "EE"
+   actual:   " "
 
 - [OUTPUT] ft_printf("%5.p", NULL)
    expected: "   0x"
-   actual:   "  0x0"
+   actual:   "     "
 
-- [OUTPUT] ft_printf("%5.s", "aasf")
-   expected: "     "
-   actual:   " aasf"
+- [OUTPUT] ft_printf("%5.d", 1)
+   expected: "    1"
+   actual:   "     "
+
+- [OUTPUT] ft_printf("%5.u", 1)
+   expected: "    1"
+   actual:   "     "
 
 - [OUTPUT] ft_printf("%5.p", NULL)
    expected: "   0x"
-   actual:   "  0x0"
+   actual:   "     "
+
+- [OUTPUT] ft_printf("%5.x", 0xee)
+   expected: "   ee"
+   actual:   "     "
+
+- [OUTPUT] ft_printf("%5.X", 0xee)
+   expected: "   EE"
+   actual:   "     "
 
 - [OUTPUT] ft_printf("-->|%-16.p|<-- ", NULL)
    expected: "-->|0x              |<-- "
-   actual:   "-->|0x0"
+   actual:   "-->|                |<-- "
 
 - [OUTPUT] ft_printf("-->|%-16p|<-- ", (void*)0x1900)
    expected: "-->|0x1900          |<-- "
@@ -2548,7 +1892,7 @@
 
 - [OUTPUT] ft_printf("-->|%-16.p|<-- ", NULL)
    expected: "-->|0x              |<-- "
-   actual:   "-->|0x0"
+   actual:   "-->|                |<-- "
 
 - [OUTPUT] ft_printf("-->|%-16p|<-- ", (void*)0x1900)
    expected: "-->|0x1900          |<-- "

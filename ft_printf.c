@@ -6,15 +6,14 @@
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:59:04 by ayajirob          #+#    #+#             */
-/*   Updated: 2022/01/28 17:36:51 by ayajirob         ###   ########.fr       */
+/*   Updated: 2022/01/29 00:30:15 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 
-void	ft_print_indent(int n, t_list *data)
+void	ft_print_indent(int n, t_list *data, int flag)
 {
 	while (n > 0)
 	{
@@ -22,6 +21,11 @@ void	ft_print_indent(int n, t_list *data)
 		n--;
 		data->output_chars++;
 	}
+	if (flag == 0)
+		data->indent = 0;
+	else if (flag == 1)
+		data->indent_right = 0;
+		
 }
 
 void	ft_format_detection(va_list argument, char format, t_list *data)
@@ -35,10 +39,14 @@ void	ft_format_detection(va_list argument, char format, t_list *data)
 	if (format == '.')
 	{
 		data->form++;
-		while (ft_isdigit(*data->form) == 1)
-			str[i++] = *data->form++;
+		data->precision = 0;
+		if (ft_isdigit(*data->form) == 1)
+		{
+			while (ft_isdigit(*data->form) == 1)
+				str[i++] = *data->form++;
 		str[i] = '\0';
 		data->precision = ft_atoi(str);
+		}
 	}
 	else if (format == '0')
 	{
@@ -65,13 +73,13 @@ void	ft_format_detection(va_list argument, char format, t_list *data)
 	}
 	else if (format == 'c')
 	{
-		ft_int_putchar(va_arg(argument, int), data);
 		data->specifier_flag = 0;
+		ft_int_putchar(va_arg(argument, int), data);
 	}
 	else if (format == 's')
 	{
-		ft_otput_for_s(va_arg(argument, char *), data);
 		data->specifier_flag = 0;
+		ft_otput_for_s(va_arg(argument, char *), data);
 	}
 	else if (format == 'p')
 	{
@@ -85,8 +93,8 @@ void	ft_format_detection(va_list argument, char format, t_list *data)
 	}
 	else if (format == 'd' || format == 'i')
 	{
-		ft_otput_for_d(va_arg(argument, int), data);
 		data->specifier_flag = 0;
+		ft_otput_for_d(va_arg(argument, int), data);
 	}
 	else if (format == 'u')
 	{
@@ -120,6 +128,8 @@ int	ft_printf(const char *format, ...)
 		if (data->specifier_flag == 1)
 		{
 			ft_format_detection(argument, *data->form, data);
+			if (data->specifier_flag == 0)
+				data->form++;
 		}
 		else if (*data->form == '%')
 		{
@@ -127,9 +137,10 @@ int	ft_printf(const char *format, ...)
 			data->form++;
 		}
 		else
+		{
 			ft_int_putchar(*data->form, data);
-		if (data->specifier_flag == 0)
 			data->form++;
+		}
 	}
 	return_val = data->output_chars;
 	free(data);

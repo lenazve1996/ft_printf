@@ -17,6 +17,8 @@ $(OBJ): $(SRC) ft_printf.h
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
+bonus: $(NAME) $(OBJ) 
+
 clean:
 	rm -f *.o
 	cd libft && $(MAKE) clean

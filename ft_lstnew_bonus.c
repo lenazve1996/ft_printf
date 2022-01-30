@@ -6,7 +6,7 @@
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 17:33:14 by ayajirob          #+#    #+#             */
-/*   Updated: 2022/01/29 00:44:15 by ayajirob         ###   ########.fr       */
+/*   Updated: 2022/01/30 20:55:38 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ t_list	*ft_lstnew(const char *format)
 	new_element->indent = 0;
 	new_element->indent_right = 0;
 	new_element->zero_flag = 0;
+	new_element->sharp = 0;
+	new_element->plus = 0;
+	new_element->space = 0;
 	new_element->next = NULL;
 	return (new_element);
 }

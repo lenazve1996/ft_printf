@@ -6,7 +6,7 @@
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:59:04 by ayajirob          #+#    #+#             */
-/*   Updated: 2022/01/29 00:30:15 by ayajirob         ###   ########.fr       */
+/*   Updated: 2022/01/30 21:39:33 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,25 @@ void	ft_format_detection(va_list argument, char format, t_list *data)
 		str[i] = '\0';
 		data->indent_right = ft_atoi(str);
 	}
+	else if (format == '#')
+	{
+		data->form++;
+		data->sharp = 1;
+	}
+	else if (format == '+')
+	{
+		data->form++;
+		while ((*data->form) == '+')
+			data->form++;
+		data->plus = 1;
+	}
+	else if (format == ' ')
+	{
+		data->form++;
+		while ((*data->form) == ' ')
+			data->form++;
+		data->space = 1;
+	}
 	else if (format == 'c')
 	{
 		data->specifier_flag = 0;
@@ -98,7 +117,7 @@ void	ft_format_detection(va_list argument, char format, t_list *data)
 	}
 	else if (format == 'u')
 	{
-		ft_otput_for_d(va_arg(argument, unsigned int), data);
+		ft_otput_for_u(va_arg(argument, unsigned int), data);
 		data->specifier_flag = 0;
 	}
 	else if (format == '%')

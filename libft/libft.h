@@ -6,7 +6,7 @@
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 14:36:57 by ayajirob          #+#    #+#             */
-/*   Updated: 2022/01/30 21:40:13 by ayajirob         ###   ########.fr       */
+/*   Updated: 2022/02/02 04:08:53 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,6 @@ void		ft_putstr_fd(char *s, int fd);
 void		ft_putchar_fd(char c, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
-char	    *ft_itoa_u(unsigned int n);
+char		*ft_itoa_u(unsigned int n);
 
 #endif

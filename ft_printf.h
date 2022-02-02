@@ -6,7 +6,7 @@
 /*   By: ayajirob <ayajirob@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 18:10:36 by ayajirob          #+#    #+#             */
-/*   Updated: 2022/01/30 21:46:21 by ayajirob         ###   ########.fr       */
+/*   Updated: 2022/02/02 04:28:54 by ayajirob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,7 @@ int		ft_count_char_number(unsigned long long n);
 void	ft_print_indent(int n, t_list *data, int flag);
 void	ft_print_str(char *str, int start_index, int numb_to_print, t_list *data);
 void	ft_otput_for_u(unsigned int number, t_list *data);
-
+void	ft_print_spaces_right(t_list *data, int len, int minus);
+void	ft_print_spaces(t_list *data, int minus, int len, int number);
+void	ft_print_zero(t_list *data, int len);
 #endif

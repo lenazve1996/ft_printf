@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_printf_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayajirob@student.42.fr <ayajirob>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:59:04 by ayajirob          #+#    #+#             */
-/*   Updated: 2022/02/02 20:47:55 by ayajirob@st      ###   ########.fr       */
+/*   Updated: 2022/02/02 20:50:44 by ayajirob@st      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_printf_bonus.h"
 
 int	ft_process_format(va_list argument, char format, t_list *data)
 {
-	int	res;
-
-	res = 0;
 	if (format == 'c')
 		ft_int_putchar(va_arg(argument, int), data);
 	else if (format == 's')
 		ft_otput_for_s(va_arg(argument, char *), data);
 	else if (format == 'p')
-		res = ft_output_for_px(va_arg(argument, unsigned long long), \
-		format, data);
+		ft_output_for_px(va_arg(argument, unsigned long long), format, data);
 	else if (format == 'x' || format == 'X')
-		res = ft_output_for_px(va_arg(argument, unsigned), format, data);
+	{
+		if (ft_output_for_px(va_arg(argument, unsigned), format, data) == 1)
+			return (1);
+	}
 	else if (format == 'd' || format == 'i')
-		res = ft_otput_for_d(va_arg(argument, int), data);
+	{
+		if (ft_otput_for_d(va_arg(argument, int), data) == 1)
+			return (1);
+	}
 	else if (format == 'u')
-		res = ft_otput_for_u(va_arg(argument, unsigned int), data);
+		ft_otput_for_u(va_arg(argument, unsigned int), data);
 	else if (format == '%')
 		ft_int_putchar('%', data);
-	if (res == 1)
-		return (1);
 	data->specifier_flag = 0;
 	return (0);
 }

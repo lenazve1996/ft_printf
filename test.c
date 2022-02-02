@@ -15,6 +15,18 @@ int main()
     a = 0;
     b = 0;
 
+    a = printf("%.214748369000d %d h\n", 777, 33);
+    printf("%d\n", a);
+    b = ft_printf("%.214748369000d %d h\n", 777, 33);
+    printf("%d\n", b);
+    a = printf(" %.2d h\n", -1);
+    b = ft_printf(" %.2d h\n", -1);
+    printf("%d\n", a);
+    printf("%d\n", b);
+    a = printf(" %04d h\n", INT_MIN);
+    b = ft_printf(" %04d h\n", INT_MIN);
+    printf("%d\n", a);
+    printf("%d\n", b);
     a =  printf("% dh\n", 1);
     b =  ft_printf("% dh\n", 1);
     printf("%d\n", a);
@@ -35,10 +47,4 @@ int main()
 	b = ft_printf(" %u \n", 9223372036854775807LL);
 	printf("%d\n", a);
     printf("%d\n", b);
-    // str = (char *)malloc(5 * sizeof(char));
-    // str = "hell";
-    // standart = printf(".9s\n", NULL);
-    // printf("%d\n", standart);
-    // my = ft_printf(".9s\n", NULL);
-    // printf("%d\n", my);
 }
